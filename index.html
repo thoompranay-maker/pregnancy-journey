@@ -1,0 +1,133 @@
+<body>
+
+<header>
+  <h1>Our Pregnancy Journey</h1>
+  <p>A new chapter is on the way</p>
+</header>
+
+<div class='container'>
+
+  <div class='cards'>
+    <div class='card'>
+      <div class='card-title'>Trimester</div>
+      <div class='card-value' id='trimester'>-</div>
+    </div>
+
+    <div class='card'>
+      <div class='card-title'>Current Age</div>
+      <div class='card-value' id='currentAge'>-</div>
+    </div>
+
+    <div class='card'>
+      <div class='card-title'>Due Date</div>
+      <div class='card-value' id='dueDate'>-</div>
+    </div>
+
+    <div class='cards extra-cards'>
+
+  <div class='card'>
+    <div class='card-title'>LMP Date</div>
+    <div class='card-value' id='lmpDate'>-</div>
+    <!-- <div class='card-sub' id='daysFromLmp'>-</div> -->
+  </div>
+
+  <div class='card'>
+    <div class='card-title'>Days since LMP</div>
+    <div class='card-value' id='daysFromLmp'>-</div>
+    <div class='card-sub'>days completed</div> 
+  </div>
+      
+        <div class='card'>
+    <div class='card-title'>Days to Due Date</div>
+    <div class='card-value' id='daysToDue'>-</div>
+    <div class='card-sub'>days remaining</div>
+  </div>
+
+</div>
+    
+</div>
+
+  <div class='progress'>
+    <div class='progress-label'>👣 Journey Progress 👣</div>
+    <div class='progress-bar'>
+      <div class='progress-fill' id='progressFill'/>
+    </div>
+  </div>
+<div id='progressPercent' style='text-align:center;font-size:20px;color:#ff1493;margin-top:20px;padding:6px 0;font-weight:bold;'>
+  0% completed
+</div>
+  
+  <!-- 💌 Message From Your Baby -->
+<div class='baby-message-card' id='babyMessageCard'>
+  <div class='baby-message-icon'>👶</div>
+  <div class='baby-message-text' id='babyMessageText'>
+    Loading a sweet message&#8230;
+  </div>
+</div>
+ 
+  <div class='milestone-box'>
+
+  <div class='milestone-header'>
+    <span class='milestone-icon'>&#9670;</span>
+    <span>This Week&#39;s Milestone</span>
+  </div>
+
+  <div class='milestone-content'>
+    <div class='milestone-week' id='milestoneWeek'>Week -</div>
+    <div class='milestone-text' id='milestoneText'>Loading...</div>
+  </div>
+    
+</div>
+  
+<div>  
+
+  <div class='baby-size-card'>
+    <div class='baby-size-title'>Baby Size This Week</div>
+    <div class='baby-size-fruit' id='babyFruit'>Loading...</div>
+  </div>
+
+</div>
+  
+<!-- OLD
+  
+
+<div class='milestone-box'>
+  <div class='milestone-title'>This Week&#39;s Milestone</div>
+  <div class='milestone-week' id='milestoneWeek'>Week -</div>
+  <div class='milestone-text' id='milestoneText'>Loading...</div>
+</div>
+
+  <div class='baby-size-box'>
+  <div class='milestone-title'>Baby Size This Week</div>
+  <div class='baby-size-fruit' id='babyFruit'>Loading...</div>
+</div>
+     
+ -->
+  
+
+  
+</div>
+
+<footer>
+  Pregnancy Journey
+</footer>
+
+<!-- REQUIRED SECTION (DO NOT REMOVE) -->
+<b:section class='main' id='main' showaddelement='yes'>
+  <b:widget id='HTML1' locked='false' title='Hidden Widget' type='HTML'>
+    <b:widget-settings>
+      <b:widget-setting name='content'/>
+    </b:widget-settings>
+    <b:includable id='main'>
+  <!-- only display title if it's non-empty -->
+  <b:if cond='data:title != &quot;&quot;'>
+    <h2 class='title'><data:title/></h2>
+  </b:if>
+  <div class='widget-content'>
+    <data:content/>
+  </div>
+
+  <b:include name='quickedit'/>
+</b:includable>
+  </b:widget>
+</b:section>
