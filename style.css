@@ -283,3 +283,100 @@ footer {
   20% { opacity: 0.6; }
   100% { transform: translateY(-120vh); opacity: 0; }
 }
+
+/* ===== PREGNANCY TIMELINE ===== */
+
+.timeline-wrapper {
+  margin: 60px auto;
+  max-width: 800px;
+  padding: 20px;
+}
+
+.timeline-title {
+  text-align: center;
+  font-size: 28px;
+  color: #d6336c;
+  margin-bottom: 30px;
+}
+
+.timeline {
+  position: relative;
+  padding-left: 30px;
+}
+
+/* Vertical line */
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 14px;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(to bottom, #ff9a9e, #ff1493);
+  border-radius: 10px;
+}
+
+/* Each week item */
+.timeline-item {
+  position: relative;
+  margin-bottom: 28px;
+  padding: 14px 18px;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(255,105,180,0.2);
+  transition: all 0.3s ease;
+}
+
+/* Dot */
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -23px;
+  top: 18px;
+  width: 14px;
+  height: 14px;
+  background: #ff69b4;
+  border-radius: 50%;
+}
+
+/* Week label */
+.timeline-week {
+  font-weight: bold;
+  color: #ff1493;
+  font-size: 16px;
+}
+
+/* States */
+.timeline-past {
+  opacity: 0.45;
+}
+
+.timeline-current {
+  background: linear-gradient(135deg, #fff0f6, #ffffff);
+  box-shadow: 0 15px 35px rgba(255,20,147,0.35);
+  transform: scale(1.03);
+}
+
+.timeline-current::before {
+  background: #ff1493;
+  box-shadow: 0 0 10px rgba(255,20,147,0.8);
+}
+
+.timeline-future {
+  opacity: 0.4;
+  filter: grayscale(100%);
+}
+
+.timeline-lock {
+  float: right;
+  font-size: 16px;
+}
+
+/* Mobile polish */
+@media (max-width: 600px) {
+  .timeline-title {
+    font-size: 22px;
+  }
+}
+
+/* ===== PREGNANCY TIMELINE ===== */
