@@ -163,6 +163,39 @@ window.addEventListener("load", () => {
     typeText(babyMessageEl, babyMessages[safeWeek], 35);
   }
 
+  /* ===== PREGNANCY TIMELINE LOGIC ===== */
+
+var timelineEl = document.getElementById("pregnancyTimeline");
+
+if (timelineEl) {
+  var totalWeeks = 40;
+
+  for (let i = 1; i <= totalWeeks; i++) {
+    let item = document.createElement("div");
+    item.className = "timeline-item";
+
+    // Determine state
+    if (i < weeks) {
+      item.classList.add("timeline-past");
+    } else if (i === weeks) {
+      item.classList.add("timeline-current");
+    } else {
+      item.classList.add("timeline-future");
+    }
+
+    item.innerHTML = `
+      <div class="timeline-week">
+        Week ${i}
+        ${i > weeks ? "<span class='timeline-lock'>🔒</span>" : ""}
+      </div>
+    `;
+
+    timelineEl.appendChild(item);
+  }
+}
+
+  /* ===== PREGNANCY TIMELINE LOGIC ===== */
+  
   /* ===== MILESTONES ===== */
   const milestones = [
     "Your baby is just beginning life.",
@@ -279,6 +312,5 @@ window.addEventListener("load", () => {
   }
 
   /* ===== DAILY BABY POPUP END ===== */
-
   
 });
