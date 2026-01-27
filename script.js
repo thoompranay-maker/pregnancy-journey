@@ -224,4 +224,61 @@ window.addEventListener("load", () => {
   if (milestoneTextEl) milestoneTextEl.textContent = milestones[weeks];
   if (babyFruitEl) babyFruitEl.textContent = babySizes[weeks];
 
+  /* ===== DAILY BABY POPUP (ALWAYS SHOW + AUTO CLOSE) ===== */
+
+  var dailyMessages = [
+    "Hi Amma 💕\nPlease drink enough water today 💧",
+    "Amma 💖\nYour heartbeat is my favorite sound.",
+    "Amma 🌸\nThank you for resting today.",
+    "Amma 🤍\nPlease eat something healthy today.",
+    "Amma 😊\nWhen you smile, I smile too.",
+    "Amma 💞\nTalk to me today.\nI love hearing your voice.",
+    "Amma 🥰\nI’m safe and happy inside you."
+  ];
+
+  var popup = document.getElementById("babyPopup");
+  var popupText = document.getElementById("babyPopupText");
+  var popupClose = document.getElementById("babyPopupClose");
+  var heartsContainer = document.getElementById("babyHearts");
+
+  if (popup && popupText) {
+    popup.style.display = "flex";
+
+    var msgIndex = new Date().getDate() % dailyMessages.length;
+    popupText.textContent = dailyMessages[msgIndex];
+
+    setTimeout(function () {
+      popup.style.opacity = "0";
+      setTimeout(function () {
+        popup.style.display = "none";
+      }, 600);
+    }, 10000);
+  }
+
+  if (popupClose) {
+    popupClose.onclick = function () {
+      popup.style.display = "none";
+    };
+  }
+
+  function createHeart() {
+    if (!heartsContainer) return;
+
+    var heart = document.createElement("span");
+    heart.textContent = ["💖","💗","💓","💘","💝"][Math.floor(Math.random() * 5)];
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.bottom = "-30px";
+    heart.style.animationDuration = (Math.random() * 6 + 6) + "s";
+
+    heartsContainer.appendChild(heart);
+    setTimeout(() => heart.remove(), 12000);
+  }
+
+  if (heartsContainer) {
+    setInterval(createHeart, 500);
+  }
+
+  /* ===== DAILY BABY POPUP END ===== */
+
+  
 });
