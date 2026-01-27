@@ -1,235 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Our Pregnancy Journey</title>
+  <meta charset="UTF-8">
+  <title>Our Pregnancy Journey</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<style>
-/* ===== BASIC STYLES ===== */
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: linear-gradient(to bottom, #ffe6f0, #ffffff);
-  color: #444;
-}
-
-header {
-  text-align: center;
-  padding: 80px 20px;
-  background: linear-gradient(to right, #ff9a9e, #fad0c4);
-  color: #ffffff;
-}
-
-.container {
-  max-width: 1000px;
-  margin: 40px auto;
-  padding: 25px;
-  background: #ffffff;
-  border-radius: 20px;
-  box-shadow: 0 15px 35px rgba(255,105,180,0.3);
-}
-
-/* ===== CARDS ===== */
-.cards {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.card {
-  width: 260px;
-  background: #fff;
-  border-radius: 18px;
-  text-align: center;
-  box-shadow: 0 8px 20px rgba(255,105,180,0.2);
-}
-
-.card-title {
-  background: linear-gradient(to right, #ff69b4, #ff1493);
-  color: #fff;
-  padding: 14px;
-  font-weight: bold;
-}
-
-.card-value {
-  padding: 26px;
-  font-size: 20px;
-  font-weight: bold;
-}
-
-/* ===== PROGRESS BAR ===== */
-.progress {
-  margin: 40px 0;
-}
-
-.progress-bar {
-  height: 14px;
-  background: #eee;
-  border-radius: 20px;
-  overflow: hidden;
-}
-
-.progress-fill {
-  height: 100%;
-  width: 0%;
-  background: linear-gradient(90deg, #ff7aa2, #ff1493);
-}
-
-/* ===== MILESTONE & BABY SIZE ===== */
-.box {
-  margin: 40px auto;
-  background: #fff5fa;
-  padding: 30px;
-  border-radius: 18px;
-  text-align: center;
-  box-shadow: 0 10px 25px rgba(255,105,180,0.25);
-}
-
-/* ===== BABY MESSAGE ===== */
-.baby-message {
-  margin: 40px auto;
-  background: #fff0f6;
-  padding: 30px;
-  border-radius: 22px;
-  text-align: center;
-  box-shadow: 0 18px 45px rgba(255, 20, 147, 0.15);
-}
-
-/* ===== POPUP ===== */
-.baby-popup-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.45);
-  display: none;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-}
-
-.baby-popup-card {
-  background: #fff;
-  padding: 30px;
-  border-radius: 22px;
-  text-align: center;
-  max-width: 420px;
-  width: 90%;
-}
-
-.baby-popup-close {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  cursor: pointer;
-  font-size: 22px;
-  color: #ff1493;
-}
-</style>
+  <!-- CSS will be added later -->
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header>
+<header class="header">
   <h1>Our Pregnancy Journey</h1>
-  <p>A new chapter is on the way</p>
+  <p>A new chapter is on the way 💖</p>
 </header>
 
-<div class="container">
+<main class="container">
 
-  <div class="cards">
+  <!-- TOP STATUS CARDS -->
+  <section class="cards">
     <div class="card">
       <div class="card-title">Trimester</div>
-      <div class="card-value" id="trimester">-</div>
+      <div class="card-value" id="trimester">–</div>
     </div>
+
     <div class="card">
       <div class="card-title">Current Age</div>
-      <div class="card-value" id="currentAge">-</div>
+      <div class="card-value" id="currentAge">–</div>
     </div>
+
     <div class="card">
       <div class="card-title">Due Date</div>
-      <div class="card-value" id="dueDate">-</div>
+      <div class="card-value" id="dueDate">–</div>
     </div>
-  </div>
+  </section>
 
-  <div class="progress">
+  <!-- PROGRESS -->
+  <section class="progress-section">
+    <div class="progress-label">👣 Pregnancy Progress</div>
     <div class="progress-bar">
       <div class="progress-fill" id="progressFill"></div>
     </div>
-    <div id="progressPercent" style="text-align:center;margin-top:12px;font-weight:bold;color:#ff1493;">
-      0% completed
-    </div>
-  </div>
+    <div class="progress-percent" id="progressPercent">0% completed</div>
+  </section>
 
-  <div class="baby-message">
+  <!-- BABY MESSAGE -->
+  <section class="baby-message">
     <h2>💌 Message From Your Baby</h2>
-    <p id="babyMessageText">Loading...</p>
-  </div>
+    <p id="babyMessageText">Loading love…</p>
+  </section>
 
-  <div class="box">
+  <!-- WEEKLY MILESTONE -->
+  <section class="info-box">
     <h2>This Week’s Milestone</h2>
-    <div id="milestoneWeek"></div>
-    <div id="milestoneText"></div>
-  </div>
+    <div id="milestoneWeek">Week –</div>
+    <div id="milestoneText">Loading…</div>
+  </section>
 
-  <div class="box">
+  <!-- BABY SIZE -->
+  <section class="info-box">
     <h2>Baby Size This Week</h2>
-    <div id="babyFruit"></div>
-  </div>
+    <div id="babyFruit">Loading…</div>
+  </section>
 
-</div>
+</main>
 
-<!-- POPUP -->
-<div class="baby-popup-overlay" id="babyPopup">
-  <div class="baby-popup-card">
-    <div class="baby-popup-close" id="babyPopupClose">×</div>
-    <p id="babyPopupText">Loading...</p>
-  </div>
-</div>
+<footer class="footer">
+  Made with ❤️ for our baby
+</footer>
 
-<script>
-/* ===== BASIC PREGNANCY LOGIC ===== */
-const lmp = new Date(2025,10,12);
-const totalDays = 280;
-const today = new Date();
-const daysDone = Math.max(0, Math.floor((today - lmp)/86400000));
-const weeks = Math.floor(daysDone/7);
-const days = daysDone % 7;
-const due = new Date(lmp.getTime() + totalDays*86400000);
-
-document.getElementById("currentAge").textContent = weeks + " Weeks " + days + " Days";
-document.getElementById("dueDate").textContent = due.toDateString();
-document.getElementById("trimester").textContent =
-  weeks < 13 ? "1st Trimester" : weeks < 28 ? "2nd Trimester" : "3rd Trimester";
-
-const percent = Math.round(daysDone/totalDays*100);
-document.getElementById("progressFill").style.width = percent + "%";
-document.getElementById("progressPercent").textContent = percent + "% completed";
-
-/* ===== MILESTONES ===== */
-const milestones = [
-  "Your baby is just beginning life.",
-  "The heart is forming.",
-  "Tiny limbs appear.",
-  "Baby is growing stronger.",
-  "Almost ready to meet you ❤️"
-];
-
-const fruits = ["Poppy seed","Blueberry","Lime","Avocado","Watermelon"];
-
-document.getElementById("milestoneWeek").textContent = "Week " + weeks;
-document.getElementById("milestoneText").textContent = milestones[Math.min(weeks,4)];
-document.getElementById("babyFruit").textContent = fruits[Math.min(weeks,4)];
-
-/* ===== DAILY POPUP ===== */
-const popup = document.getElementById("babyPopup");
-const popupText = document.getElementById("babyPopupText");
-popupText.textContent = "Hi Amma 💕 I’m growing safely inside you.";
-
-popup.style.display = "flex";
-setTimeout(()=>popup.style.display="none",10000);
-document.getElementById("babyPopupClose").onclick=()=>popup.style.display="none";
-</script>
+<!-- JS will be added later -->
+<script src="script.js"></script>
 
 </body>
 </html>
