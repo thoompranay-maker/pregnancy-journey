@@ -225,3 +225,61 @@ footer {
     padding: 20px;
   }
 }
+
+.baby-popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+.baby-popup-card {
+  background: linear-gradient(135deg, #fff0f6, #ffffff);
+  border-radius: 26px;
+  padding: 34px 28px;
+  max-width: 420px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 30px 70px rgba(255, 20, 147, 0.35);
+  position: relative;
+}
+
+.baby-popup-close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #ff1493;
+  font-weight: bold;
+}
+
+.baby-popup-icon {
+  font-size: 44px;
+  margin-bottom: 14px;
+}
+
+.baby-popup-text {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #444;
+  white-space: pre-line;
+}
+
+/* hearts */
+.baby-hearts span {
+  position: absolute;
+  font-size: 18px;
+  opacity: 0.5;
+  animation: floatHearts linear infinite;
+}
+
+@keyframes floatHearts {
+  0% { transform: translateY(0); opacity: 0; }
+  20% { opacity: 0.6; }
+  100% { transform: translateY(-120vh); opacity: 0; }
+}
