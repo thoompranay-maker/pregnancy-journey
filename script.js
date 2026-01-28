@@ -101,8 +101,7 @@ window.addEventListener("load", () => {
   if (daysFromLmpEl) animateNumber(daysFromLmpEl, 0, daysDone, 2000);
   if (daysToDueEl) animateNumber(daysToDueEl, 0, TOTAL_DAYS - daysDone, 2000);
 
-   /* ===== TIMELINE AUTO TILL WEEK 40 ===== */
-
+/* ===== TIMELINE AUTO TILL WEEK 40 ===== */
 const timelineEl = document.getElementById("pregnancyTimeline");
 
 if (timelineEl) {
@@ -111,29 +110,24 @@ if (timelineEl) {
     weekDiv.className = "timeline-week";
     weekDiv.dataset.week = week;
 
-    // States
     if (week < weeks) weekDiv.classList.add("past");
-    if (week === weeks) weekDiv.classList.add("current");
-    if (week > weeks) weekDiv.classList.add("future");
+    else if (week === weeks) weekDiv.classList.add("current");
+    else weekDiv.classList.add("future");
 
     weekDiv.innerHTML = `
       <div class="week-header">
         <span class="week-dot"></span>
         <span class="week-title">Week ${week}</span>
       </div>
-
       <div class="week-content">
         <p class="week-message">👶 ${babyMessages[week] || ""}</p>
         <p class="week-milestone"><strong>Milestone:</strong> ${milestones[week] || ""}</p>
         <p class="week-size"><strong>Size:</strong> ${babySizes[week] || ""}</p>
       </div>
     `;
-
     timelineEl.appendChild(weekDiv);
   }
 }
-
-  
    /* ===== TIMELINE AUTO TILL WEEK 40 END ===== */
 
 /* ===== PROGRESS BAR ===== */
