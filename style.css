@@ -284,102 +284,110 @@ footer {
   100% { transform: translateY(-120vh); opacity: 0; }
 }
 
-/* ===== PREGNANCY TIMELINE ===== */
-
-.timeline-wrapper {
-  margin: 60px auto;
-  max-width: 800px;
-  padding: 20px;
-}
-
-.timeline-title {
-  text-align: center;
-  font-size: 28px;
-  color: #d6336c;
-  margin-bottom: 30px;
-}
+/* ===== PREGNANCY TIMELINE FINAL ===== */
 
 .timeline {
   position: relative;
-  padding-left: 30px;
+  margin: 40px auto;
+  padding-left: 40px;
+  max-width: 720px;
 }
 
 /* Vertical line */
 .timeline::before {
   content: "";
   position: absolute;
-  left: 14px;
+  left: 16px;
   top: 0;
   bottom: 0;
   width: 4px;
-  background: linear-gradient(to bottom, #ff9a9e, #ff1493);
+  background: linear-gradient(to bottom, #ff9ab5, #ff1493);
   border-radius: 10px;
 }
 
-/* Each week item */
-.timeline-item {
+/* Each week card */
+.timeline-week {
   position: relative;
-  margin-bottom: 28px;
-  padding: 14px 18px;
-  background: #fff;
-  border-radius: 14px;
-  box-shadow: 0 8px 20px rgba(255,105,180,0.2);
+  margin-bottom: 20px;
+  padding: 16px 20px 16px 24px;
+  background: #fff5f8;
+  border-radius: 16px;
+  cursor: pointer;
   transition: all 0.3s ease;
 }
 
 /* Dot */
-.timeline-item::before {
-  content: "";
+.week-dot {
   position: absolute;
-  left: -23px;
-  top: 18px;
+  left: -28px;
+  top: 22px;
   width: 14px;
   height: 14px;
-  background: #ff69b4;
+  background: #ff9ab5;
   border-radius: 50%;
 }
 
-/* Week label */
-.timeline-week {
+/* Week title */
+.week-title {
+  font-size: 18px;
   font-weight: bold;
   color: #ff1493;
-  font-size: 16px;
 }
 
-/* States */
-.timeline-past {
-  opacity: 0.45;
+/* Content */
+.week-content {
+  margin-top: 10px;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: all 0.4s ease;
 }
 
-.timeline-current {
-  background: linear-gradient(135deg, #fff0f6, #ffffff);
-  box-shadow: 0 15px 35px rgba(255,20,147,0.35);
-  transform: scale(1.03);
+/* OPEN state */
+.timeline-week.open .week-content {
+  opacity: 1;
 }
 
-.timeline-current::before {
+/* CURRENT WEEK */
+.timeline-week.current {
+  background: linear-gradient(135deg, #ffe0ec, #ffffff);
+  box-shadow: 0 12px 30px rgba(255, 20, 147, 0.35);
+}
+
+.timeline-week.current .week-dot {
   background: #ff1493;
-  box-shadow: 0 0 10px rgba(255,20,147,0.8);
+  box-shadow: 0 0 12px rgba(255, 20, 147, 0.8);
 }
 
-.timeline-future {
+/* PAST WEEK */
+.timeline-week.past:hover {
+  background: #ffe6f0;
+}
+
+/* FUTURE WEEK */
+.timeline-week.future {
   opacity: 0.4;
-  filter: grayscale(100%);
+  cursor: not-allowed;
 }
 
-.timeline-lock {
-  float: right;
+.timeline-week.future .week-title::after {
+  content: " 🔒";
   font-size: 16px;
 }
 
-/* Mobile polish */
-@media (max-width: 600px) {
-  .timeline-title {
-    font-size: 22px;
-  }
+/* Text styles */
+.week-message {
+  font-size: 16px;
+  margin-bottom: 6px;
 }
 
-/* ===== PREGNANCY TIMELINE ===== */
+.week-milestone,
+.week-size {
+  font-size: 15px;
+  color: #555;
+}
+
+/* ===== PREGNANCY TIMELINE FINAL ===== */
 
 /* ===== CURRENT WEEK HIGHLIGHT ===== */
 
