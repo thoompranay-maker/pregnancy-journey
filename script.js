@@ -236,7 +236,7 @@ if (timelineEl) {
         <span class="week-lock">
   ${
     week > weeks
-      ? "🔒"
+      ? ""
       : week < weeks
       ? "🔓"
       : ""
