@@ -142,7 +142,8 @@ window.addEventListener("load", () => {
     "Full term approaches.",
     "I’m full term now!",
     "Any day now!",
-    "I’m ready ❤️"
+    "I’m ready ❤️",
+    "Hooray! I am with you! ❤️"
   ];
 
   if (babyMessageEl) {
