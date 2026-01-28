@@ -214,7 +214,8 @@ window.addEventListener("load", () => {
   if (babyFruitEl) babyFruitEl.textContent = babySizes[weeks];
 
   
-/* ===== TIMELINE AUTO TILL WEEK 40 ===== */
+/* ===== FINAL PREGNANCY TIMELINE ===== */
+
 const timelineEl = document.getElementById("pregnancyTimeline");
 
 if (timelineEl) {
@@ -223,6 +224,7 @@ if (timelineEl) {
     weekDiv.className = "timeline-week";
     weekDiv.dataset.week = week;
 
+    // State
     if (week < weeks) weekDiv.classList.add("past");
     else if (week === weeks) weekDiv.classList.add("current");
     else weekDiv.classList.add("future");
@@ -232,16 +234,43 @@ if (timelineEl) {
         <span class="week-dot"></span>
         <span class="week-title">Week ${week}</span>
       </div>
+
       <div class="week-content">
         <p class="week-message">👶 ${babyMessages[week] || ""}</p>
         <p class="week-milestone"><strong>Milestone:</strong> ${milestones[week] || ""}</p>
         <p class="week-size"><strong>Size:</strong> ${babySizes[week] || ""}</p>
       </div>
     `;
+
     timelineEl.appendChild(weekDiv);
+
+    const content = weekDiv.querySelector(".week-content");
+
+    // Auto-open current week
+    if (week === weeks) {
+      weekDiv.classList.add("open");
+      content.style.maxHeight = content.scrollHeight + "px";
+      content.style.opacity = "1";
+    }
+
+    // Click toggle (past only)
+    weekDiv.addEventListener("click", () => {
+      if (weekDiv.classList.contains("future")) return;
+
+      if (weekDiv.classList.contains("open")) {
+        weekDiv.classList.remove("open");
+        content.style.maxHeight = "0";
+        content.style.opacity = "0";
+      } else {
+        weekDiv.classList.add("open");
+        content.style.maxHeight = content.scrollHeight + "px";
+        content.style.opacity = "1";
+      }
+    });
   }
 }
-   /* ===== TIMELINE AUTO TILL WEEK 40 END ===== */
+
+   /* ===== FINAL PREGNANCY TIMELINE END ===== */
 
 /* ===== PROGRESS BAR ===== */
 if (progressFill && progressPercent) {
