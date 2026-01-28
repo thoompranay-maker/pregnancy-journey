@@ -233,6 +233,15 @@ if (timelineEl) {
       <div class="week-header">
         <span class="week-dot"></span>
         <span class="week-title">Week ${week}</span>
+        <span class="week-lock">
+  ${
+    week > weeks
+      ? "🔒"
+      : week < weeks
+      ? "🔓"
+      : ""
+  }
+</span>
       </div>
 
       <div class="week-content">
