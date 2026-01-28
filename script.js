@@ -101,48 +101,6 @@ window.addEventListener("load", () => {
   if (daysFromLmpEl) animateNumber(daysFromLmpEl, 0, daysDone, 2000);
   if (daysToDueEl) animateNumber(daysToDueEl, 0, TOTAL_DAYS - daysDone, 2000);
 
-/* ===== TIMELINE AUTO TILL WEEK 40 ===== */
-const timelineEl = document.getElementById("pregnancyTimeline");
-
-if (timelineEl) {
-  for (let week = 1; week <= 40; week++) {
-    const weekDiv = document.createElement("div");
-    weekDiv.className = "timeline-week";
-    weekDiv.dataset.week = week;
-
-    if (week < weeks) weekDiv.classList.add("past");
-    else if (week === weeks) weekDiv.classList.add("current");
-    else weekDiv.classList.add("future");
-
-    weekDiv.innerHTML = `
-      <div class="week-header">
-        <span class="week-dot"></span>
-        <span class="week-title">Week ${week}</span>
-      </div>
-      <div class="week-content">
-        <p class="week-message">👶 ${babyMessages[week] || ""}</p>
-        <p class="week-milestone"><strong>Milestone:</strong> ${milestones[week] || ""}</p>
-        <p class="week-size"><strong>Size:</strong> ${babySizes[week] || ""}</p>
-      </div>
-    `;
-    timelineEl.appendChild(weekDiv);
-  }
-}
-   /* ===== TIMELINE AUTO TILL WEEK 40 END ===== */
-
-/* ===== PROGRESS BAR ===== */
-if (progressFill && progressPercent) {
-  const percent = Math.round((daysDone / TOTAL_DAYS) * 100);
-  let current = 0;
-
-  const progressTimer = setInterval(() => {
-    current++;
-    progressFill.style.width = current + "%";
-    progressPercent.textContent = current + "% completed";
-
-    if (current >= percent) clearInterval(progressTimer);
-  }, 30);
-}
   /* ===== BABY LOVE MESSAGES ===== */
   const babyMessages = [
     "Hi Amma & Nana 💕\nI’ve just begun my journey.\nThank you for dreaming about me.",
@@ -252,6 +210,50 @@ if (progressFill && progressPercent) {
   if (milestoneWeekEl) milestoneWeekEl.textContent = "Week " + weeks;
   if (milestoneTextEl) milestoneTextEl.textContent = milestones[weeks];
   if (babyFruitEl) babyFruitEl.textContent = babySizes[weeks];
+
+  
+/* ===== TIMELINE AUTO TILL WEEK 40 ===== */
+const timelineEl = document.getElementById("pregnancyTimeline");
+
+if (timelineEl) {
+  for (let week = 1; week <= 40; week++) {
+    const weekDiv = document.createElement("div");
+    weekDiv.className = "timeline-week";
+    weekDiv.dataset.week = week;
+
+    if (week < weeks) weekDiv.classList.add("past");
+    else if (week === weeks) weekDiv.classList.add("current");
+    else weekDiv.classList.add("future");
+
+    weekDiv.innerHTML = `
+      <div class="week-header">
+        <span class="week-dot"></span>
+        <span class="week-title">Week ${week}</span>
+      </div>
+      <div class="week-content">
+        <p class="week-message">👶 ${babyMessages[week] || ""}</p>
+        <p class="week-milestone"><strong>Milestone:</strong> ${milestones[week] || ""}</p>
+        <p class="week-size"><strong>Size:</strong> ${babySizes[week] || ""}</p>
+      </div>
+    `;
+    timelineEl.appendChild(weekDiv);
+  }
+}
+   /* ===== TIMELINE AUTO TILL WEEK 40 END ===== */
+
+/* ===== PROGRESS BAR ===== */
+if (progressFill && progressPercent) {
+  const percent = Math.round((daysDone / TOTAL_DAYS) * 100);
+  let current = 0;
+
+  const progressTimer = setInterval(() => {
+    current++;
+    progressFill.style.width = current + "%";
+    progressPercent.textContent = current + "% completed";
+
+    if (current >= percent) clearInterval(progressTimer);
+  }, 30);
+}
 
   /* ===== DAILY BABY POPUP (ALWAYS SHOW + AUTO CLOSE) ===== */
 
