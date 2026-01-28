@@ -198,10 +198,6 @@ if (timelineEl) {
     typeText(babyMessageEl, babyMessages[safeWeek], 35);
   }
 
-  /* ===== PREGNANCY TIMELINE LOGIC ===== */
-
-  /* ===== PREGNANCY TIMELINE LOGIC END ===== */
-  
   /* ===== MILESTONES ===== */
   const milestones = [
     "Your baby is just beginning life.",
