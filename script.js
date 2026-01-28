@@ -191,7 +191,8 @@ window.addEventListener("load", () => {
     "Full term approaches.",
     "Baby is full term.",
     "Waiting to meet your baby.",
-    "Any day now."
+    "Any day now.",
+    "Hi, Amma & Nana."
   ];
 
   const babySizes = [
@@ -202,7 +203,7 @@ window.addEventListener("load", () => {
     "Papaya","Corn","Zucchini","Cauliflower","Lettuce",
     "Cabbage","Pumpkin","Butternut squash","Coconut","Pineapple",
     "Cantaloupe","Honeydew","Watermelon","Large watermelon",
-    "Pumpkin","Big pumpkin","Very large pumpkin","Ready to meet you"
+    "Pumpkin","Big pumpkin","Very large pumpkin","Ready to meet you","How Am I in your hands! Do you love me!"
   ];
 
   weeks = Math.max(0, Math.min(weeks, 39));
