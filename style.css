@@ -426,3 +426,17 @@ footer {
 }
 
 /* ===== COLLAPSIBLE CONTENT ===== */
+
+.timeline-week.current {
+  background: linear-gradient(135deg, #ffe6f0, #fff);
+  border-left: 4px solid #ff2f92;
+  box-shadow: 0 15px 35px rgba(255, 47, 146, 0.25);
+  transform: scale(1.02);
+}
+
+.timeline-week.current .week-dot {
+  background: #ff2f92;
+  box-shadow: 0 0 12px rgba(255, 47, 146, 0.8);
+}
+
+/* ===== COLLAPSIBLE CONTENT ===== */
