@@ -251,6 +251,18 @@ if (timelineEl) {
       </div>
     `;
 
+  /* ✅ PASTE THIS PART HERE */
+  if (week < weeks) {
+    const content = weekDiv.querySelector(".week-content");
+    if (content) {
+      content.style.maxHeight = "0";
+      content.style.opacity = "0";
+    }
+  }
+
+  timelineEl.appendChild(weekDiv);
+}
+    
     timelineEl.appendChild(weekDiv);
 
     const content = weekDiv.querySelector(".week-content");
