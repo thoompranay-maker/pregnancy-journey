@@ -312,5 +312,38 @@ if (progressFill && progressPercent) {
   }
 
   /* ===== DAILY BABY POPUP END ===== */
+
+/* ===== TIMELINE CLICK TO TOGGLE (SAFE) ===== */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  document.querySelectorAll(".timeline-week").forEach(week => {
+    week.addEventListener("click", () => {
+
+      // ❌ Do nothing for future weeks
+      if (week.classList.contains("future")) return;
+
+      // Toggle past weeks
+      if (week.classList.contains("past")) {
+        week.classList.toggle("open");
+
+        const content = week.querySelector(".week-content");
+        if (content) {
+          if (week.classList.contains("open")) {
+            content.style.maxHeight = content.scrollHeight + "px";
+            content.style.opacity = "1";
+          } else {
+            content.style.maxHeight = "0";
+            content.style.opacity = "0";
+          }
+        }
+      }
+
+    });
+  });
+/* ===== TIMELINE CLICK TO TOGGLE (SAFE) ===== */
+  
+});
+
   
 });
