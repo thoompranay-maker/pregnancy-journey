@@ -136,19 +136,19 @@ if (timelineEl) {
   
    /* ===== TIMELINE AUTO TILL WEEK 40 END ===== */
 
-  /* ===== PROGRESS BAR ===== */
-  if (progressFill && progressPercent) {
-    let targetPercent = Math.round((daysDone / TOTAL_DAYS) * 100);
-    let current = 0;
+/* ===== PROGRESS BAR ===== */
+if (progressFill && progressPercent) {
+  const percent = Math.round((daysDone / TOTAL_DAYS) * 100);
+  let current = 0;
 
-    let interval = setInterval(() => {
-      current++;
-      progressFill.style.width = current + "%";
-      progressPercent.textContent = current + "% completed";
-      if (current >= targetPercent) clearInterval(interval);
-    }, 40);
-  }
+  const progressTimer = setInterval(() => {
+    current++;
+    progressFill.style.width = current + "%";
+    progressPercent.textContent = current + "% completed";
 
+    if (current >= percent) clearInterval(progressTimer);
+  }, 30);
+}
   /* ===== BABY LOVE MESSAGES ===== */
   const babyMessages = [
     "Hi Amma & Nana 💕\nI’ve just begun my journey.\nThank you for dreaming about me.",
