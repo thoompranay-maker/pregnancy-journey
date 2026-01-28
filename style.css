@@ -396,3 +396,23 @@ footer {
 }
 
 /* ===== CURRENT WEEK HIGHLIGHT ===== */
+
+/* ===== COLLAPSIBLE CONTENT ===== */
+
+.timeline-week .week-content {
+  max-height: 1000px;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.3s ease;
+}
+
+.timeline-week.past .week-content {
+  max-height: 0;
+  opacity: 0;
+}
+
+.timeline-week.future .week-content {
+  max-height: 0;
+  opacity: 0.4;
+}
+
+/* ===== COLLAPSIBLE CONTENT ===== */
