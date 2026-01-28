@@ -380,3 +380,19 @@ footer {
 }
 
 /* ===== PREGNANCY TIMELINE ===== */
+
+/* ===== CURRENT WEEK HIGHLIGHT ===== */
+
+.timeline-week.current {
+  background: linear-gradient(135deg, #ffe0ec, #fff);
+  border-left: 4px solid #ff1493;
+  box-shadow: 0 12px 30px rgba(255, 20, 147, 0.25);
+  transform: scale(1.01);
+}
+
+.timeline-week.current .week-title {
+  color: #ff1493;
+  font-weight: 700;
+}
+
+/* ===== CURRENT WEEK HIGHLIGHT ===== */
