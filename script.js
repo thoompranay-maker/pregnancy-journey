@@ -259,10 +259,7 @@ if (timelineEl) {
       content.style.opacity = "0";
     }
   }
-
-  timelineEl.appendChild(weekDiv);
-}
-    
+  
     timelineEl.appendChild(weekDiv);
 
     const content = weekDiv.querySelector(".week-content");
