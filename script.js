@@ -394,3 +394,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
   
 });
+/* ===== JUMP TO BUTTON ===== */
+const jumpBtn = document.getElementById("jumpToCurrent");
+if (jumpBtn) {
+  jumpBtn.addEventListener("click", () => {
+    const currentWeek = document.querySelector(".timeline-week.current");
+    if (currentWeek) {
+      currentWeek.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+  });
+}
+/* ===== JUMP TO BUTTON ===== */
