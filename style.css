@@ -456,3 +456,13 @@ footer {
   box-shadow: 0 8px 20px rgba(255, 47, 146, 0.35);
 }
 /* ===== JUMP TO BUTTON ===== */
+
+/* ===== TIMELINE WEEK TRANSFORM ===== */
+.timeline-week {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.timeline-week:active {
+  transform: scale(0.98);
+}
+/* ===== TIMELINE WEEK TRANSFORM ===== */
