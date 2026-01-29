@@ -440,3 +440,19 @@ footer {
 }
 
 /* ===== COLLAPSIBLE CONTENT ===== */
+
+/* ===== JUMP TO BUTTON ===== */
+.jump-btn {
+  display: block;
+  margin: 20px auto 40px;
+  padding: 12px 26px;
+  border-radius: 30px;
+  border: none;
+  background: linear-gradient(135deg, #ff5fa2, #ff2f92);
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(255, 47, 146, 0.35);
+}
+/* ===== JUMP TO BUTTON ===== */
