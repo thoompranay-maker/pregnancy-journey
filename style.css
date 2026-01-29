@@ -466,3 +466,36 @@ footer {
   transform: scale(0.98);
 }
 /* ===== TIMELINE WEEK TRANSFORM ===== */
+
+/* ❤️ Tiny heart pulse for current week */
+
+.timeline-week.current .week-dot::after {
+  content: "❤️";
+  position: absolute;
+  top: -10px;
+  left: -8px;
+  font-size: 14px;
+  animation: heartPulse 1.8s infinite ease-in-out;
+}
+
+@keyframes heartPulse {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.9);
+    opacity: 0.6;
+  }
+}
+
+/* Ensure dot can host the heart */
+.week-dot {
+  position: relative;
+}
+
+/* ❤️ Tiny heart pulse for current week */
