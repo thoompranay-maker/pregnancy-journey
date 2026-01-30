@@ -513,6 +513,14 @@ footer {
   font-weight: 500;
 }
 
+.card-subtitle span,
+.card-subtitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
 /* card subtitle end */
 
 /* card hover */
