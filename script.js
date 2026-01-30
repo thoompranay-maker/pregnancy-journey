@@ -307,13 +307,45 @@ if (progressFill && progressPercent) {
   /* ===== DAILY BABY POPUP (ALWAYS SHOW + AUTO CLOSE) ===== */
 
   var dailyMessages = [
-    "Hi Amma 💕\nPlease drink enough water today 💧",
-    "Amma 💖\nYour heartbeat is my favorite sound.",
-    "Amma 🌸\nThank you for resting today.",
-    "Amma 🤍\nPlease eat something healthy today.",
-    "Amma 😊\nWhen you smile, I smile too.",
-    "Amma 💞\nTalk to me today.\nI love hearing your voice.",
-    "Amma 🥰\nI’m safe and happy inside you."
+ "Hi Amma 💕\nPlease drink enough water today 💧",
+  "Amma 💓\nYour heartbeat is my favorite sound.",
+  "Amma 🌷\nThank you for resting today.",
+  "Amma 🤍\nPlease eat something healthy today.",
+  "Amma 😊\nWhen you smile, I smile too.",
+  "Amma 💞\nTalk to me today.\nI love hearing your voice.",
+  "Amma 🥰\nI’m safe and happy inside you.",
+
+  "Amma 🌸\nI feel your love every moment.",
+  "Amma 💖\nYour warmth keeps me cozy.",
+  "Amma 🫶\nSlow down today.\nI’m growing gently.",
+  "Amma 🌼\nThank you for choosing me.",
+  "Amma 💓\nI’m getting stronger because of you.",
+  "Amma 🤰\nYour care is my first home.",
+  "Amma ✨\nEvery breath you take comforts me.",
+
+  "Amma 🌙\nRest well tonight.\nI’ll watch over you.",
+  "Amma 💗\nYour laughter reaches me.",
+  "Amma 🌷\nI love our quiet moments together.",
+  "Amma 💞\nSing to me when you can.",
+  "Amma 🌈\nI feel peaceful when you are calm.",
+  "Amma 🥹\nThank you for protecting me.",
+  "Amma 🤍\nYour body is doing something magical.",
+
+  "Amma 🌸\nI’m growing perfectly in my own time.",
+  "Amma 💕\nPlease don’t worry.\nI’m okay.",
+  "Amma 🫶\nYour love is my strength.",
+  "Amma 🌼\nI feel safe when you rest.",
+  "Amma 💓\nEach day, I grow a little more.",
+  "Amma 🌺\nThank you for talking to me.",
+  "Amma ✨\nI can’t wait to meet you someday.",
+
+  "Amma 🌙\nGood night.\nI’m cuddled close.",
+  "Amma 🤍\nYour heartbeat guides me.",
+  "Amma 💞\nI love being with you.",
+  "Amma 🌸\nPlease be kind to yourself today.",
+  "Amma 💖\nYou’re already the best Amma.",
+  "Amma 🌈\nYour happiness makes me glow.",
+  "Amma 🥰\nI’m growing with love inside you."
   ];
 
   var popup = document.getElementById("babyPopup");
