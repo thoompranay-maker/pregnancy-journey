@@ -524,52 +524,118 @@ footer {
 /* card hover end */
 
 /* ===== NIGHT MODE ===== */
+/* ===== PREMIUM NIGHT MODE (CALM & EMOTIONAL) ===== */
 
 body.night {
-  background: linear-gradient(to bottom, #1c1b2f, #2b1f3a);
-  color: #f3e9f1;
+  background: radial-gradient(circle at top, #2b1f3a 0%, #151222 60%);
+  color: #f6edf3;
 }
 
-/* Cards */
-body.night .card,
-body.night .timeline-week,
-body.night .baby-message-card {
-  background: linear-gradient(135deg, #2f2342, #3a2b52);
-  box-shadow: 0 15px 40px rgba(255, 105, 180, 0.25);
+/* Header */
+body.night header {
+  background: linear-gradient(to right, #3a2b52, #2a1e3a);
 }
 
-/* Headings */
-body.night h1,
-body.night h2,
-body.night h3 {
-  color: #ffb3d9;
+body.night header h1 {
+  color: #ffd6ea;
+}
+
+body.night header p {
+  color: #e8cfe0;
+}
+
+/* Main container */
+body.night .container {
+  background: linear-gradient(to bottom, #2a2038, #1e182b);
+  box-shadow: 0 40px 120px rgba(0,0,0,0.6);
+}
+
+/* Cards (Top 6) */
+body.night .card {
+  background: linear-gradient(135deg, #3b2d55, #2a2038);
+  box-shadow: 0 20px 45px rgba(255, 105, 180, 0.18);
+}
+
+/* Card title strip */
+body.night .card-title {
+  background: linear-gradient(to right, #ff8fc7, #ff5fa2);
+  color: #2b1b2e;
+}
+
+/* Card values */
+body.night .card-value {
+  color: #fff0f7;
 }
 
 /* Sub text */
-body.night p,
-body.night span {
-  color: #f0d7e6;
+body.night .card-sub,
+body.night .status-sub {
+  color: #d9bdd1;
 }
 
 /* Progress bar */
 body.night .progress-bar {
-  background: rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.12);
 }
 
-/* Timeline line */
+body.night .progress-fill {
+  background: linear-gradient(to right, #ff7ab6, #ff4fa3);
+}
+
+/* Timeline */
 body.night .timeline::before {
   background: linear-gradient(to bottom, #ff8fc7, #ff4fa3);
 }
 
-/* Current week highlight */
-body.night .timeline-week.current {
-  box-shadow: 0 0 40px rgba(255, 105, 180, 0.6);
+/* Timeline week cards */
+body.night .timeline-week {
+  background: linear-gradient(135deg, #2f2342, #241a35);
+  box-shadow: 0 18px 45px rgba(0,0,0,0.5);
 }
 
-/* Lock icons */
-body.night .lock {
-  opacity: 0.8;
+/* Past weeks */
+body.night .timeline-week.past {
+  opacity: 0.65;
 }
+
+/* Current week (hero) */
+body.night .timeline-week.current {
+  background: linear-gradient(135deg, #4a2f6d, #3a2555);
+  box-shadow: 0 0 60px rgba(255, 105, 180, 0.55);
+}
+
+/* Future weeks */
+body.night .timeline-week.future {
+  opacity: 0.45;
+}
+
+/* Baby message card */
+body.night .baby-message-card {
+  background: linear-gradient(135deg, #3a2b52, #2a2038);
+  box-shadow: 0 25px 60px rgba(255, 105, 180, 0.35);
+}
+
+/* Text everywhere */
+body.night h2,
+body.night h3 {
+  color: #ffb6d9;
+}
+
+body.night p,
+body.night span {
+  color: #f3e6ee;
+}
+
+/* Popup */
+body.night .baby-popup-card {
+  background: linear-gradient(135deg, #3a2b52, #2a2038);
+}
+
+/* Toggle button */
+body.night .night-toggle {
+  background: linear-gradient(to right, #ff8fc7, #ff5fa2);
+}
+
 /* ===== NIGHT MODE END ===== */
 
 /* ===== NIGHT TOGGLE ===== */
