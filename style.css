@@ -507,9 +507,10 @@ footer {
 /* card subtitle */
 .card-subtitle {
   font-size: 13px;
-  color: #ff7aa2;
   margin-top: 6px;
+  color: #b85a7a;        /* soft rose */
   opacity: 0.85;
+  font-weight: 500;
 }
 
 /* card subtitle end */
@@ -644,6 +645,11 @@ body.night .baby-popup-icon {
 
 body.night .baby-popup-card {
   background: linear-gradient(135deg, #3f2a57, #2a2038);
+}
+
+body.night .card-subtitle {
+  color: #d8a1b8;        /* muted blush for dark bg */
+  opacity: 0.9;
 }
 
 /* Toggle button */
