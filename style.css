@@ -61,6 +61,8 @@ header p {
   position: relative;
   overflow: hidden;
 }
+
+<!--
 .card::before {
   content: "";
   position: absolute;
@@ -83,6 +85,7 @@ header p {
   font-size: 14px;
   opacity: 1;
 }
+-->
 
 .card-title {
   background: linear-gradient(to right, #ff69b4, #ff1493);
