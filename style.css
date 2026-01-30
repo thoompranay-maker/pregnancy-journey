@@ -627,8 +627,19 @@ body.night span {
 }
 
 /* Popup */
+/* ===== POPUP TEXT COLOR FIX (NIGHT MODE) ===== */
+
+body.night .baby-popup-text {
+  color: #ffeaf4;          /* soft warm pink-white */
+  font-weight: 500;
+}
+
+body.night .baby-popup-icon {
+  filter: drop-shadow(0 0 8px rgba(255, 182, 217, 0.6));
+}
+
 body.night .baby-popup-card {
-  background: linear-gradient(135deg, #3a2b52, #2a2038);
+  background: linear-gradient(135deg, #3f2a57, #2a2038);
 }
 
 /* Toggle button */
