@@ -460,3 +460,10 @@ window.toggleNightMode = function () {
 };
 
 /* ===== NIGHT MODE AUTO + MANUAL ===== */
+
+/* ===== NIGHT BUTTON ===== */
+const nightBtn = document.getElementById("nightToggle");
+if (nightBtn) {
+  nightBtn.onclick = () => toggleNightMode();
+}
+/* ===== NIGHT BUTTON END ===== */
