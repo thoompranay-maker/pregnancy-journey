@@ -450,7 +450,7 @@ function disableNightMode() {
 
 // Auto night mode (7 PM – 6 AM)
 const hour = new Date().getHours();
-if (hour >= 19 || hour < 6) {
+if (hour >= 18 || hour < 6) {
   enableNightMode();
 }
 
