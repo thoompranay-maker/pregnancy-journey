@@ -522,3 +522,52 @@ footer {
 }
 
 /* card hover end */
+
+/* ===== NIGHT MODE ===== */
+
+body.night {
+  background: linear-gradient(to bottom, #1c1b2f, #2b1f3a);
+  color: #f3e9f1;
+}
+
+/* Cards */
+body.night .card,
+body.night .timeline-week,
+body.night .baby-message-card {
+  background: linear-gradient(135deg, #2f2342, #3a2b52);
+  box-shadow: 0 15px 40px rgba(255, 105, 180, 0.25);
+}
+
+/* Headings */
+body.night h1,
+body.night h2,
+body.night h3 {
+  color: #ffb3d9;
+}
+
+/* Sub text */
+body.night p,
+body.night span {
+  color: #f0d7e6;
+}
+
+/* Progress bar */
+body.night .progress-bar {
+  background: rgba(255,255,255,0.15);
+}
+
+/* Timeline line */
+body.night .timeline::before {
+  background: linear-gradient(to bottom, #ff8fc7, #ff4fa3);
+}
+
+/* Current week highlight */
+body.night .timeline-week.current {
+  box-shadow: 0 0 40px rgba(255, 105, 180, 0.6);
+}
+
+/* Lock icons */
+body.night .lock {
+  opacity: 0.8;
+}
+/* ===== NIGHT MODE END ===== */
