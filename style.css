@@ -571,3 +571,21 @@ body.night .lock {
   opacity: 0.8;
 }
 /* ===== NIGHT MODE END ===== */
+
+/* ===== NIGHT TOGGLE ===== */
+.night-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  border: none;
+  background: linear-gradient(to right, #ff69b4, #ff1493);
+  color: white;
+  font-size: 20px;
+  padding: 14px 16px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(255,20,147,0.4);
+  z-index: 9999;
+}
+
+/* ===== NIGHT TOGGLE END ===== */
