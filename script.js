@@ -438,5 +438,25 @@ if (jumpBtn) {
 }
 /* ===== JUMP TO BUTTON ===== */
 
+/* ===== NIGHT MODE AUTO + MANUAL ===== */
 
+function enableNightMode() {
+  document.body.classList.add("night");
+}
 
+function disableNightMode() {
+  document.body.classList.remove("night");
+}
+
+// Auto night mode (7 PM – 6 AM)
+const hour = new Date().getHours();
+if (hour >= 19 || hour < 6) {
+  enableNightMode();
+}
+
+// Optional: expose toggle for later use
+window.toggleNightMode = function () {
+  document.body.classList.toggle("night");
+};
+
+/* ===== NIGHT MODE AUTO + MANUAL ===== */
