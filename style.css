@@ -75,6 +75,15 @@ header p {
   pointer-events: none;
 }
 
+.card::after {
+  content: "💗";
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  font-size: 14px;
+  opacity: 0.2;
+}
+
 .card-title {
   background: linear-gradient(to right, #ff69b4, #ff1493);
   color: #ffffff;
