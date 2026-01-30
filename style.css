@@ -57,6 +57,7 @@ header p {
   border-radius: 18px;
   text-align: center;
   box-shadow: 0 10px 25px rgba(255,105,180,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   overflow: hidden;
 }
 
@@ -511,9 +512,6 @@ footer {
 /* card subtitle end */
 
 /* card hover */
-.card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
 
 .card:hover {
   transform: translateY(-4px);
