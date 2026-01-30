@@ -634,6 +634,10 @@ body.night .baby-popup-text {
   font-weight: 500;
 }
 
+body.night .baby-popup-text strong {
+  color: #ffb6d9;
+}
+
 body.night .baby-popup-icon {
   filter: drop-shadow(0 0 8px rgba(255, 182, 217, 0.6));
 }
