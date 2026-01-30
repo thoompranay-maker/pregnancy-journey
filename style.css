@@ -62,30 +62,7 @@ header p {
   overflow: hidden;
 }
 
-<!--
-.card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 18px;
-  padding: 2px;
-  background: linear-gradient(135deg, #ff7eb3, #ff758c);
-  -webkit-mask:
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  pointer-events: none;
-}
 
-.card::after {
-  content: "💗";
-  position: absolute;
-  top: 10px;
-  right: 14px;
-  font-size: 14px;
-  opacity: 1;
-}
--->
 
 .card-title {
   background: linear-gradient(to right, #ff69b4, #ff1493);
