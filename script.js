@@ -357,7 +357,7 @@ if (progressFill && progressPercent) {
     popup.style.display = "flex";
 
     var msgIndex = new Date().getDate() % dailyMessages.length;
-    popupText.textContent = dailyMessages[msgIndex];
+    popupText.innerHTML = dailyMessages[msgIndex];
 
     setTimeout(function () {
       popup.style.opacity = "0";
