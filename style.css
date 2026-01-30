@@ -499,3 +499,13 @@ footer {
 }
 
 /* ❤️ Tiny heart pulse for current week */
+
+/* card subtitle */
+.card-subtitle {
+  font-size: 13px;
+  color: #ff7aa2;
+  margin-top: 6px;
+  opacity: 0.85;
+}
+
+/* card subtitle end */
