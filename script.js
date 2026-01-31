@@ -467,3 +467,19 @@ if (nightBtn) {
   nightBtn.onclick = () => toggleNightMode();
 }
 /* ===== NIGHT BUTTON END ===== */
+
+/* ===== HEARTBEAT LOADER LOGIC ===== */
+window.addEventListener("load", () => {
+  const loader = document.getElementById("heartbeatLoader");
+
+  // Keep loader visible for emotional pause
+  setTimeout(() => {
+    loader.style.opacity = "0";
+
+    setTimeout(() => {
+      loader.style.display = "none";
+    }, 1000);
+
+  }, 2600); // total heartbeat time
+});
+/* ===== HEARTBEAT LOADER LOGIC END===== */
