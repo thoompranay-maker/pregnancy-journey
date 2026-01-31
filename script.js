@@ -15,7 +15,7 @@ function animateNumber(el, start, end, duration, suffix = "") {
   requestAnimationFrame(step);
 }
 
-// Animate weeks + days together
+// Animate weeks + days
 function animateWeeksDays(el, targetWeeks, targetDays, duration) {
   if (!el) return;
   let startTime = null;
@@ -23,29 +23,30 @@ function animateWeeksDays(el, targetWeeks, targetDays, duration) {
   function step(timestamp) {
     if (!startTime) startTime = timestamp;
     let progress = Math.min((timestamp - startTime) / duration, 1);
-
     let w = Math.floor(progress * targetWeeks);
     let d = Math.floor(progress * targetDays);
-
-    el.textContent = w + " Weeks " + d + " Days";
+    el.textContent = `${w} Weeks ${d} Days`;
     if (progress < 1) requestAnimationFrame(step);
   }
   requestAnimationFrame(step);
 }
 
-// Typewriter effect
+// Typewriter
 function typeText(el, text, speed = 35) {
   if (!el) return;
   el.textContent = "";
   let i = 0;
-  let timer = setInterval(() => {
-    el.textContent += text.charAt(i);
-    i++;
+  const timer = setInterval(() => {
+    el.textContent += text.charAt(i++);
     if (i >= text.length) clearInterval(timer);
   }, speed);
 }
 
-/* ========= LOADER CONTROL ========= */
+/* ================== FLOW CONTROLLER ================== */
+
+let popupClosed = false;
+
+/* ===== LOADER ===== */
 
 function startLoader() {
   const loader = document.getElementById("loader");
@@ -54,8 +55,7 @@ function startLoader() {
   loader.style.display = "flex";
   loader.style.opacity = "1";
 
-  // Auto stop loader after animation (heartbeat)
-  setTimeout(stopLoader, 3000); // 3s loader
+  setTimeout(stopLoader, 3000); // heartbeat duration
 }
 
 function stopLoader() {
@@ -63,20 +63,13 @@ function stopLoader() {
   if (!loader) return;
 
   loader.style.opacity = "0";
-
   setTimeout(() => {
     loader.style.display = "none";
-
-    // 👉 VERY IMPORTANT: start popup AFTER loader
-    startPopup();
-
+    startPopup(); // 🔥 loader → popup
   }, 600);
 }
 
-
-/* ===== PAGE FLOW CONTROLLER ===== */
-
-let popupClosed = false;
+/* ===== POPUP ===== */
 
 function startPopup() {
   const popup = document.getElementById("babyPopup");
@@ -84,29 +77,36 @@ function startPopup() {
 
   popup.style.display = "flex";
   popup.style.opacity = "1";
+
+  // auto close after 10s
+  setTimeout(() => {
+    if (!popupClosed) closePopup();
+  }, 10000);
 }
 
 function closePopup() {
   const popup = document.getElementById("babyPopup");
-  if (!popup) return;
+  if (!popup || popupClosed) return;
 
+  popupClosed = true;
   popup.style.opacity = "0";
+
   setTimeout(() => {
     popup.style.display = "none";
-    popupClosed = true;
-    startAnimations();
+    startAnimations(); // 🔥 popup → animations
   }, 600);
 }
 
-function startAnimations() {
-  // Age animation
-  if (ageEl) animateWeeksDays(ageEl, weeks, days, 2000);
+/* ===== ANIMATIONS (RUN ONCE) ===== */
 
-  // Day counters
+function startAnimations() {
+  if (window.__animationsStarted) return;
+  window.__animationsStarted = true;
+
+  if (ageEl) animateWeeksDays(ageEl, weeks, days, 2000);
   if (daysFromLmpEl) animateNumber(daysFromLmpEl, 0, daysDone, 2000);
   if (daysToDueEl) animateNumber(daysToDueEl, 0, TOTAL_DAYS - daysDone, 2000);
 
-  // Progress bar
   if (progressFill && progressPercent) {
     const percent = Math.round((daysDone / TOTAL_DAYS) * 100);
     progressFill.style.width = percent + "%";
