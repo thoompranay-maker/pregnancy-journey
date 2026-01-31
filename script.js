@@ -15,7 +15,7 @@ function animateNumber(el, start, end, duration, suffix = "") {
   requestAnimationFrame(step);
 }
 
-// Animate weeks + days
+// Animate weeks + days together
 function animateWeeksDays(el, targetWeeks, targetDays, duration) {
   if (!el) return;
   let startTime = null;
@@ -23,95 +23,26 @@ function animateWeeksDays(el, targetWeeks, targetDays, duration) {
   function step(timestamp) {
     if (!startTime) startTime = timestamp;
     let progress = Math.min((timestamp - startTime) / duration, 1);
+
     let w = Math.floor(progress * targetWeeks);
     let d = Math.floor(progress * targetDays);
-    el.textContent = `${w} Weeks ${d} Days`;
+
+    el.textContent = w + " Weeks " + d + " Days";
     if (progress < 1) requestAnimationFrame(step);
   }
   requestAnimationFrame(step);
 }
 
-// Typewriter
+// Typewriter effect
 function typeText(el, text, speed = 35) {
   if (!el) return;
   el.textContent = "";
   let i = 0;
-  const timer = setInterval(() => {
-    el.textContent += text.charAt(i++);
+  let timer = setInterval(() => {
+    el.textContent += text.charAt(i);
+    i++;
     if (i >= text.length) clearInterval(timer);
   }, speed);
-}
-
-/* ================== FLOW CONTROLLER ================== */
-
-let popupClosed = false;
-
-/* ===== LOADER ===== */
-
-function startLoader() {
-  const loader = document.getElementById("loader");
-  if (!loader) return;
-
-  loader.style.display = "flex";
-  loader.style.opacity = "1";
-
-  setTimeout(stopLoader, 3000); // heartbeat duration
-}
-
-function stopLoader() {
-  const loader = document.getElementById("loader");
-  if (!loader) return;
-
-  loader.style.opacity = "0";
-  setTimeout(() => {
-    loader.style.display = "none";
-    startPopup(); // 🔥 loader → popup
-  }, 600);
-}
-
-/* ===== POPUP ===== */
-
-function startPopup() {
-  const popup = document.getElementById("babyPopup");
-  if (!popup) return;
-
-  popup.style.display = "flex";
-  popup.style.opacity = "1";
-
-  // auto close after 10s
-  setTimeout(() => {
-    if (!popupClosed) closePopup();
-  }, 10000);
-}
-
-function closePopup() {
-  const popup = document.getElementById("babyPopup");
-  if (!popup || popupClosed) return;
-
-  popupClosed = true;
-  popup.style.opacity = "0";
-
-  setTimeout(() => {
-    popup.style.display = "none";
-    startAnimations(); // 🔥 popup → animations
-  }, 600);
-}
-
-/* ===== ANIMATIONS (RUN ONCE) ===== */
-
-function startAnimations() {
-  if (window.__animationsStarted) return;
-  window.__animationsStarted = true;
-
-  if (ageEl) animateWeeksDays(ageEl, weeks, days, 2000);
-  if (daysFromLmpEl) animateNumber(daysFromLmpEl, 0, daysDone, 2000);
-  if (daysToDueEl) animateNumber(daysToDueEl, 0, TOTAL_DAYS - daysDone, 2000);
-
-  if (progressFill && progressPercent) {
-    const percent = Math.round((daysDone / TOTAL_DAYS) * 100);
-    progressFill.style.width = percent + "%";
-    progressPercent.textContent = percent + "% completed";
-  }
 }
 
 /* ================== MAIN ================== */
@@ -163,12 +94,12 @@ window.addEventListener("load", () => {
   /* ===== CURRENT AGE ANIMATION ===== */
   if (ageEl) {
     ageEl.textContent = "0 Weeks 0 Days";
-    // animateWeeksDays(ageEl, weeks, days, 2000);
+    animateWeeksDays(ageEl, weeks, days, 2000);
   }
 
   /* ===== DAYS COUNTS ===== */
-  // if (daysFromLmpEl) animateNumber(daysFromLmpEl, 0, daysDone, 2000);
-  // if (daysToDueEl) animateNumber(daysToDueEl, 0, TOTAL_DAYS - daysDone, 2000);
+  if (daysFromLmpEl) animateNumber(daysFromLmpEl, 0, daysDone, 2000);
+  if (daysToDueEl) animateNumber(daysToDueEl, 0, TOTAL_DAYS - daysDone, 2000);
 
   /* ===== BABY LOVE MESSAGES ===== */
   const babyMessages = [
@@ -411,6 +342,7 @@ if (progressFill && progressPercent) {
   "<strong>Amma 🌙</strong>\nGood night.\nI’m cuddled close.",
   "<strong>Amma 🤍</strong>\nYour heartbeat guides me.",
   "<strong>Amma 💞</strong>\nI love being with you.",
+  "<strong>Amma 🌸</strong>\nPlease be kind to yourself today.",
   "<strong>Amma 💖</strong>\nYou’re already the best Amma.",
   "<strong>Amma 🌈</strong>\nYour happiness makes me glow.",
   "<strong>Amma 🥰</strong>\nI’m growing with love inside you."
@@ -427,15 +359,18 @@ if (progressFill && progressPercent) {
     var msgIndex = new Date().getDate() % dailyMessages.length;
     popupText.innerHTML = dailyMessages[msgIndex];
 
-setTimeout(() => {
-  closePopup();
-}, 10000);
+    setTimeout(function () {
+      popup.style.opacity = "0";
+      setTimeout(function () {
+        popup.style.display = "none";
+      }, 600);
+    }, 10000);
   }
 
   if (popupClose) {
-  popupClose.onclick = function () {
-  closePopup();
-  };
+    popupClose.onclick = function () {
+      popup.style.display = "none";
+    };
   }
 
   function createHeart() {
@@ -532,35 +467,3 @@ if (nightBtn) {
   nightBtn.onclick = () => toggleNightMode();
 }
 /* ===== NIGHT BUTTON END ===== */
-
-/* ===== HEARTBEAT LOADER LOGIC ===== */
-window.addEventListener("load", () => {
-  const loader = document.getElementById("heartbeatLoader");
-
-  setTimeout(() => {
-    loader.style.opacity = "0";
-
-    setTimeout(() => {
-      loader.style.display = "none";
-
-      // 🔥 ONLY NOW show popup
-      startPopup();
-
-      // Auto-close popup after 3.5 sec
-      setTimeout(() => {
-        if (!popupClosed) closePopup();
-      }, 3500);
-
-    }, 1000);
-
-  }, 2600);
-});
-
-/* ===== HEARTBEAT LOADER LOGIC END===== */
-
-/* ========= PAGE START FLOW ========= */
-
-document.addEventListener("DOMContentLoaded", () => {
-  startLoader();
-});
-
