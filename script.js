@@ -508,14 +508,23 @@ if (nightBtn) {
 window.addEventListener("load", () => {
   const loader = document.getElementById("heartbeatLoader");
 
-  // Keep loader visible for emotional pause
   setTimeout(() => {
     loader.style.opacity = "0";
 
     setTimeout(() => {
       loader.style.display = "none";
+
+      // 🔥 ONLY NOW show popup
+      startPopup();
+
+      // Auto-close popup after 3.5 sec
+      setTimeout(() => {
+        if (!popupClosed) closePopup();
+      }, 3500);
+
     }, 1000);
 
-  }, 2600); // total heartbeat time
+  }, 2600);
 });
+
 /* ===== HEARTBEAT LOADER LOGIC END===== */
