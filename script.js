@@ -398,12 +398,9 @@ if (progressFill && progressPercent) {
     var msgIndex = new Date().getDate() % dailyMessages.length;
     popupText.innerHTML = dailyMessages[msgIndex];
 
-    setTimeout(function () {
-      popup.style.opacity = "0";
-      setTimeout(function () {
-        popup.style.display = "none";
-      }, 600);
-    }, 10000);
+setTimeout(() => {
+  closePopup();
+}, 10000);
   }
 
   if (popupClose) {
