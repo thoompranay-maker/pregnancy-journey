@@ -71,9 +71,9 @@ function closePopup() {
 
 function startAnimations() {
   // 👇 EVERYTHING that animates numbers goes here
-  if (ageEl) animateWeeksDays(ageEl, weeks, days, 2000);
-  if (daysFromLmpEl) animateNumber(daysFromLmpEl, 0, daysDone, 2000);
-  if (daysToDueEl) animateNumber(daysToDueEl, 0, TOTAL_DAYS - daysDone, 2000);
+  // if (ageEl) animateWeeksDays(ageEl, weeks, days, 2000);
+  // if (daysFromLmpEl) animateNumber(daysFromLmpEl, 0, daysDone, 2000);
+  // if (daysToDueEl) animateNumber(daysToDueEl, 0, TOTAL_DAYS - daysDone, 2000);
 
   if (progressFill && progressPercent) {
     const percent = Math.round((daysDone / TOTAL_DAYS) * 100);
@@ -131,12 +131,12 @@ window.addEventListener("load", () => {
   /* ===== CURRENT AGE ANIMATION ===== */
   if (ageEl) {
     ageEl.textContent = "0 Weeks 0 Days";
-    animateWeeksDays(ageEl, weeks, days, 2000);
+    // animateWeeksDays(ageEl, weeks, days, 2000);
   }
 
   /* ===== DAYS COUNTS ===== */
-  if (daysFromLmpEl) animateNumber(daysFromLmpEl, 0, daysDone, 2000);
-  if (daysToDueEl) animateNumber(daysToDueEl, 0, TOTAL_DAYS - daysDone, 2000);
+  // if (daysFromLmpEl) animateNumber(daysFromLmpEl, 0, daysDone, 2000);
+  // if (daysToDueEl) animateNumber(daysToDueEl, 0, TOTAL_DAYS - daysDone, 2000);
 
   /* ===== BABY LOVE MESSAGES ===== */
   const babyMessages = [
