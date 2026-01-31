@@ -404,9 +404,9 @@ if (progressFill && progressPercent) {
   }
 
   if (popupClose) {
-    popupClose.onclick = function () {
-      popup.style.display = "none";
-    };
+  popupClose.onclick = function () {
+  closePopup();
+  };
   }
 
   function createHeart() {
