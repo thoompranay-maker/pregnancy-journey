@@ -70,14 +70,17 @@ function closePopup() {
 }
 
 function startAnimations() {
-  // 👇 EVERYTHING that animates numbers goes here
-  // if (ageEl) animateWeeksDays(ageEl, weeks, days, 2000);
-  // if (daysFromLmpEl) animateNumber(daysFromLmpEl, 0, daysDone, 2000);
-  // if (daysToDueEl) animateNumber(daysToDueEl, 0, TOTAL_DAYS - daysDone, 2000);
+  // Age animation
+  if (ageEl) animateWeeksDays(ageEl, weeks, days, 2000);
 
+  // Day counters
+  if (daysFromLmpEl) animateNumber(daysFromLmpEl, 0, daysDone, 2000);
+  if (daysToDueEl) animateNumber(daysToDueEl, 0, TOTAL_DAYS - daysDone, 2000);
+
+  // Progress bar
   if (progressFill && progressPercent) {
     const percent = Math.round((daysDone / TOTAL_DAYS) * 100);
-    // progressFill.style.width = percent + "%";
+    progressFill.style.width = percent + "%";
     progressPercent.textContent = percent + "% completed";
   }
 }
