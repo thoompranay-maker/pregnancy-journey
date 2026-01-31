@@ -45,6 +45,35 @@ function typeText(el, text, speed = 35) {
   }, speed);
 }
 
+/* ========= LOADER CONTROL ========= */
+
+function startLoader() {
+  const loader = document.getElementById("loader");
+  if (!loader) return;
+
+  loader.style.display = "flex";
+  loader.style.opacity = "1";
+
+  // Auto stop loader after animation (heartbeat)
+  setTimeout(stopLoader, 3000); // 3s loader
+}
+
+function stopLoader() {
+  const loader = document.getElementById("loader");
+  if (!loader) return;
+
+  loader.style.opacity = "0";
+
+  setTimeout(() => {
+    loader.style.display = "none";
+
+    // 👉 VERY IMPORTANT: start popup AFTER loader
+    startPopup();
+
+  }, 600);
+}
+
+
 /* ===== PAGE FLOW CONTROLLER ===== */
 
 let popupClosed = false;
