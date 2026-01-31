@@ -77,7 +77,7 @@ function startAnimations() {
 
   if (progressFill && progressPercent) {
     const percent = Math.round((daysDone / TOTAL_DAYS) * 100);
-    progressFill.style.width = percent + "%";
+    // progressFill.style.width = percent + "%";
     progressPercent.textContent = percent + "% completed";
   }
 }
