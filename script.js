@@ -45,6 +45,43 @@ function typeText(el, text, speed = 35) {
   }, speed);
 }
 
+/* ===== PAGE FLOW CONTROLLER ===== */
+
+let popupClosed = false;
+
+function startPopup() {
+  const popup = document.getElementById("babyPopup");
+  if (!popup) return;
+
+  popup.style.display = "flex";
+  popup.style.opacity = "1";
+}
+
+function closePopup() {
+  const popup = document.getElementById("babyPopup");
+  if (!popup) return;
+
+  popup.style.opacity = "0";
+  setTimeout(() => {
+    popup.style.display = "none";
+    popupClosed = true;
+    startAnimations();
+  }, 600);
+}
+
+function startAnimations() {
+  // 👇 EVERYTHING that animates numbers goes here
+  if (ageEl) animateWeeksDays(ageEl, weeks, days, 2000);
+  if (daysFromLmpEl) animateNumber(daysFromLmpEl, 0, daysDone, 2000);
+  if (daysToDueEl) animateNumber(daysToDueEl, 0, TOTAL_DAYS - daysDone, 2000);
+
+  if (progressFill && progressPercent) {
+    const percent = Math.round((daysDone / TOTAL_DAYS) * 100);
+    progressFill.style.width = percent + "%";
+    progressPercent.textContent = percent + "% completed";
+  }
+}
+
 /* ================== MAIN ================== */
 
 window.addEventListener("load", () => {
