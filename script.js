@@ -528,3 +528,10 @@ window.addEventListener("load", () => {
 });
 
 /* ===== HEARTBEAT LOADER LOGIC END===== */
+
+/* ========= PAGE START FLOW ========= */
+
+document.addEventListener("DOMContentLoaded", () => {
+  startLoader();
+});
+
