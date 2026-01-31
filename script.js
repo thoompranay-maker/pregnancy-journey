@@ -342,7 +342,6 @@ if (progressFill && progressPercent) {
   "<strong>Amma 🌙</strong>\nGood night.\nI’m cuddled close.",
   "<strong>Amma 🤍</strong>\nYour heartbeat guides me.",
   "<strong>Amma 💞</strong>\nI love being with you.",
-  "<strong>Amma 🌸</strong>\nPlease be kind to yourself today.",
   "<strong>Amma 💖</strong>\nYou’re already the best Amma.",
   "<strong>Amma 🌈</strong>\nYour happiness makes me glow.",
   "<strong>Amma 🥰</strong>\nI’m growing with love inside you."
