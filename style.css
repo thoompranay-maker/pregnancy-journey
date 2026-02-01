@@ -684,3 +684,27 @@ body.night .night-toggle {
 }
 
 /* ===== NIGHT TOGGLE END ===== */
+
+/* 🌙 Night mode – FIX opened past week card */
+
+body.night .timeline-week.past.open {
+  background: linear-gradient(
+    135deg,
+    #3a1f4f,
+    #2a173b
+  );
+  opacity: 1;
+  box-shadow: 0 12px 30px rgba(255, 105, 180, 0.25);
+}
+
+/* Ensure text is readable */
+body.night .timeline-week.past.open .week-content {
+  color: #ffe9f3;
+}
+
+/* Remove faded look */
+body.night .timeline-week.past.open * {
+  opacity: 1;
+}
+
+/* 🌙 Night mode – FIX opened past week card */
