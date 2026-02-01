@@ -725,3 +725,8 @@ body.night .timeline-week.past {
 }
 
 /* 🌙 Night mode – CLOSED past week (default look) */
+
+/* Prevent faded overlay effect */
+body.night .timeline-week .week-content {
+  background: transparent;
+}
