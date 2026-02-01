@@ -712,3 +712,16 @@ body.night .timeline-week.past.open * {
 body.night .timeline-week.past.open {
   border-left: 4px solid #ff6fae;
 }
+
+/* 🌙 Night mode – CLOSED past week (default look) */
+body.night .timeline-week.past {
+  background: linear-gradient(
+    135deg,
+    #24182f,
+    #1b1225
+  );
+  opacity: 1;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 🌙 Night mode – CLOSED past week (default look) */
