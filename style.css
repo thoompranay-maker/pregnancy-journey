@@ -708,3 +708,7 @@ body.night .timeline-week.past.open * {
 }
 
 /* 🌙 Night mode – FIX opened past week card */
+
+body.night .timeline-week.past.open {
+  border-left: 4px solid #ff6fae;
+}
