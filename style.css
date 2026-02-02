@@ -84,7 +84,7 @@ header p {
   flex-wrap: wrap;
   margin: 30px 0;
 }
-
+<!----
 .card {
   width: 300px;
   background: #ffffff;
@@ -118,6 +118,47 @@ header p {
   color: #777;
   margin-bottom: 18px;
 }
+---->
+.card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 24px 20px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.08);
+}
+
+.card .icon {
+  font-size: 26px;
+  margin-bottom: 8px;
+}
+
+.card .label {
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  letter-spacing: 1px;
+  color: #9b8f8a;
+  text-transform: uppercase;
+}
+
+.card .value {
+  font-family: "Playfair Display", serif;
+  font-size: 28px;
+  color: #5b3f3f;
+  margin-top: 6px;
+}
+
+.card .sub {
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  color: #9b8f8a;
+}
+
 
 /* ================= PROGRESS ================= */
 
