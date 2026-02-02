@@ -30,6 +30,40 @@ header p {
   margin-top: 10px;
 }
 
+.hero {
+  text-align: center;
+  padding: 60px 20px 40px;
+  background: linear-gradient(
+    135deg,
+    #fdf1ea,
+    #f6efe9,
+    #f1f3ec
+  );
+}
+
+.hero-title {
+  font-size: 42px;
+  margin: 0;
+}
+
+.title-main {
+  font-family: "Playfair Display", serif;
+  color: #6b4e4e;
+}
+
+.title-script {
+  font-family: "Pacifico", cursive;
+  color: #f2a6a0;
+  margin-left: 10px;
+}
+
+.hero-subtitle {
+  margin-top: 10px;
+  font-family: "Inter", sans-serif;
+  color: #8a7f7a;
+  font-size: 16px;
+}
+
 /* ================= CONTAINER ================= */
 
 .container {
