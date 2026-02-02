@@ -86,22 +86,49 @@ header p {
 }
 
 .card {
-  background: #ffffff;
-  border-radius: 20px;
-  padding: 24px 20px;
-  text-align: center;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.06);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background: linear-gradient(
+    135deg,
+    #ffffff 0%,
+    #fff6f8 40%,
+    #fff0f5 100%
+  );
+  border-radius: 22px;
+  padding: 22px;
+  box-shadow:
+    0 12px 30px rgba(255, 182, 193, 0.25),
+    inset 0 0 0 1px rgba(255, 192, 203, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.card:active,
 .card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 14px 30px rgba(0,0,0,0.08);
+  transform: translateY(-2px);
+  box-shadow:
+    0 18px 40px rgba(255, 182, 193, 0.35),
+    inset 0 0 0 1px rgba(255, 105, 180, 0.35);
 }
 
-.card .icon {
-  font-size: 26px;
+.card-icon {
+  background: radial-gradient(
+    circle,
+    rgba(255, 182, 193, 0.35),
+    transparent 70%
+  );
+  border-radius: 50%;
+ 
+
+  padding: 14px;
+  display: inline-flex;
   margin-bottom: 8px;
+}
+
+.card-icon {
+  animation: gentlePulse 6s ease-in-out infinite;
+}
+
+@keyframes gentlePulse {
+  0%, 100% { opacity: 0.85; }
+  50% { opacity: 1; }
 }
 
 .card .label {
