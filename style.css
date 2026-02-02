@@ -122,15 +122,6 @@ header p {
   margin-bottom: 8px;
 }
 
-.card-icon {
-  animation: gentlePulse 6s ease-in-out infinite;
-}
-
-@keyframes gentlePulse {
-  0%, 100% { opacity: 0.85; }
-  50% { opacity: 1; }
-}
-
 .card .label {
   font-family: "Inter", sans-serif;
   font-size: 13px;
