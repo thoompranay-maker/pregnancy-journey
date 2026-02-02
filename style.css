@@ -137,6 +137,7 @@ header p {
   letter-spacing: 1px;
   color: #9b8f8a;
   text-transform: uppercase;
+  justify-content: center;
 }
 
 .card .value {
@@ -144,12 +145,14 @@ header p {
   font-size: 28px;
   color: #5b3f3f;
   margin-top: 6px;
+  justify-content: center;
 }
 
 .card .sub {
   font-family: "Inter", sans-serif;
   font-size: 13px;
   color: #9b8f8a;
+  justify-content: center;
 }
 
 
