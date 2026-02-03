@@ -86,66 +86,38 @@ header p {
 }
 
 .card {
-  background: linear-gradient(
-    135deg,
-    #ffffff 0%,
-    #fff6f8 40%,
-    #fff0f5 100%
-  );
-  border-radius: 22px;
-  padding: 22px;
-  box-shadow:
-    0 12px 30px rgba(255, 182, 193, 0.25),
-    inset 0 0 0 1px rgba(255, 192, 203, 0.25);
+  width: 300px;
+  background: #ffffff;
+  border-radius: 18px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(255,105,180,0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
-.card:active,
-.card:hover {
-  transform: translateY(-2px);
-  box-shadow:
-    0 18px 40px rgba(255, 182, 193, 0.35),
-    inset 0 0 0 1px rgba(255, 105, 180, 0.35);
-}
 
-.card-icon {
-  background: radial-gradient(
-    circle,
-    rgba(255, 182, 193, 0.35),
-    transparent 70%
-  );
-  border-radius: 50%;
- 
 
+.card-title {
+  background: linear-gradient(to right, #ff69b4, #ff1493);
+  color: #ffffff;
   padding: 14px;
-  display: inline-flex;
-  margin-bottom: 8px;
+  font-weight: bold;
+  font-size: 18px;
 }
 
-.card .label {
-  font-family: "Inter", sans-serif;
-  font-size: 13px;
-  letter-spacing: 1px;
-  color: #9b8f8a;
-  text-transform: uppercase;
-  justify-content: center;
+.card-value {
+  padding: 30px 20px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #333;
 }
 
-.card .value {
-  font-family: "Playfair Display", serif;
-  font-size: 28px;
-  color: #5b3f3f;
-  margin-top: 6px;
-  justify-content: center;
+.card-sub {
+  font-size: 15px;
+  color: #777;
+  margin-bottom: 18px;
 }
-
-.card .sub {
-  font-family: "Inter", sans-serif;
-  font-size: 13px;
-  color: #9b8f8a;
-  justify-content: center;
-}
-
 
 /* ================= PROGRESS ================= */
 
