@@ -78,7 +78,9 @@ header p {
 /* ================= CARDS ================= */
 
 .card {
-  width: 300px;
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
   background: #ffffff;
   border-radius: 18px;
   text-align: center;
