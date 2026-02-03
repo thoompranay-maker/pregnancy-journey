@@ -30,40 +30,6 @@ header p {
   margin-top: 10px;
 }
 
-.hero {
-  text-align: center;
-  padding: 60px 20px 40px;
-  background: linear-gradient(
-    135deg,
-    #fdf1ea,
-    #f6efe9,
-    #f1f3ec
-  );
-}
-
-.hero-title {
-  font-size: 42px;
-  margin: 0;
-}
-
-.title-main {
-  font-family: "Playfair Display", serif;
-  color: #6b4e4e;
-}
-
-.title-script {
-  font-family: "Pacifico", cursive;
-  color: #f2a6a0;
-  margin-left: 10px;
-}
-
-.hero-subtitle {
-  margin-top: 10px;
-  font-family: "Inter", sans-serif;
-  color: #8a7f7a;
-  font-size: 16px;
-}
-
 /* ================= CONTAINER ================= */
 
 .container {
@@ -77,10 +43,16 @@ header p {
 
 /* ================= CARDS ================= */
 
+.cards {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 30px 0;
+}
+
 .card {
-  width: 100%;
-  max-width: 320px;
-  margin: 0 auto;
+  width: 300px;
   background: #ffffff;
   border-radius: 18px;
   text-align: center;
@@ -712,73 +684,3 @@ body.night .night-toggle {
 }
 
 /* ===== NIGHT TOGGLE END ===== */
-
-/* 🌙 Night mode – FIX opened past week card */
-
-body.night .timeline-week.past.open {
-  background: linear-gradient(
-    135deg,
-    #3a1f4f,
-    #2a173b
-  );
-  opacity: 1;
-  box-shadow: 0 12px 30px rgba(255, 105, 180, 0.25);
-}
-
-/* Ensure text is readable */
-body.night .timeline-week.past.open .week-content {
-  color: #ffe9f3;
-}
-
-/* Remove faded look */
-body.night .timeline-week.past.open * {
-  opacity: 1;
-}
-
-/* 🌙 Night mode – FIX opened past week card */
-
-body.night .timeline-week.past.open {
-  border-left: 4px solid #ff6fae;
-}
-
-/* 🌙 Night mode – CLOSED past week (default look) */
-body.night .timeline-week.past {
-  background: linear-gradient(
-    135deg,
-    #24182f,
-    #1b1225
-  );
-  opacity: 1;
-  transition: background 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* 🌙 Night mode – CLOSED past week (default look) */
-
-/* Prevent faded overlay effect */
-body.night .timeline-week .week-content {
-  background: transparent;
-}
-
-/* DEFAULT (Desktop & Tablet) */
-.cards-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-  align-items: stretch;
-}
-
-/* 📱 MOBILE — ONE CARD PER ROW */
-@media (max-width: 768px) {
-  .cards-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-}
-
-@media (max-width: 768px) {
-  .card {
-    min-height: 170px;
-    text-align: center;
-  }
-}
-
