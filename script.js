@@ -45,6 +45,12 @@ function typeText(el, text, speed = 35) {
   }, speed);
 }
 
+function getTrimesterByWeek(week) {
+  if (week <= 12) return 1;
+  if (week <= 27) return 2;
+  return 3;
+}
+
 /* ================== MAIN ================== */
 
 window.addEventListener("load", () => {
