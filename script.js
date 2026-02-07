@@ -266,7 +266,14 @@ if (timelineEl) {
     }
   }
   
-    timelineEl.appendChild(weekDiv);
+const trimester = getTrimesterByWeek(week);
+
+const trimesterContainer = document.querySelector(
+  `.trimester-section[data-trimester="${trimester}"]`
+);
+
+trimesterContainer.appendChild(weekDiv);
+
 
     const content = weekDiv.querySelector(".week-content");
 
@@ -427,6 +434,27 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 /* ===== TIMELINE CLICK TO TOGGLE (SAFE) ===== */
   
+});
+
+    /* ===== TRIMESTER TAB LOGIC ===== */
+  document.querySelectorAll(".trimester-tab").forEach(tab => {
+    tab.addEventListener("click", () => {
+      const selected = tab.dataset.trimester;
+
+      document.querySelectorAll(".trimester-tab").forEach(t =>
+        t.classList.remove("active")
+      );
+      tab.classList.add("active");
+
+      document.querySelectorAll(".trimester-section").forEach(section => {
+        section.classList.toggle(
+          "active",
+          section.dataset.trimester === selected
+        );
+      });
+    });
+  });
+
 });
 
   
