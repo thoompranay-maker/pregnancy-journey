@@ -684,3 +684,52 @@ body.night .night-toggle {
 }
 
 /* ===== NIGHT TOGGLE END ===== */
+
+.trimester-tabs {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin: 30px 0;
+  flex-wrap: wrap;
+}
+
+.trimester-tab {
+  padding: 10px 18px;
+  border-radius: 999px;
+  border: 1px solid #ffd1e6;
+  background: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.trimester-tab.active {
+  background: linear-gradient(135deg, #ff5fa2, #ff86c8);
+  color: white;
+  box-shadow: 0 8px 20px rgba(255, 95, 162, 0.3);
+}
+
+.trimester-tabs {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin: 30px 0;
+  flex-wrap: wrap;
+}
+
+.trimester-tab {
+  padding: 10px 18px;
+  border-radius: 999px;
+  border: 1px solid #ffd1e6;
+  background: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.trimester-tab.active {
+  background: linear-gradient(135deg, #ff5fa2, #ff86c8);
+  color: white;
+  box-shadow: 0 8px 20px rgba(255, 95, 162, 0.3);
+}
+
