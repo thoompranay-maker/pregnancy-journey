@@ -55,6 +55,8 @@ function getTrimesterByWeek(week) {
 
 window.addEventListener("load", initPage);
 
+function initPage() {
+  
   /* ===== CONFIG ===== */
   const LMP_DATE = new Date(2025, 10, 12); // 12 Nov 2025
   const TOTAL_DAYS = 280;
@@ -430,8 +432,6 @@ if (progressFill && progressPercent) {
 
 });
 
-  
-});
 /* ===== JUMP TO BUTTON ===== */
 const jumpBtn = document.getElementById("jumpToCurrent");
 if (jumpBtn) {
