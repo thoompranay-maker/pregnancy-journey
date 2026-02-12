@@ -476,8 +476,6 @@ trimesterTabs[defaultTrimester - 1].classList.add("active");
 
 
 /* ===== TRIMESTER TAB LOGIC END ===== */
-  
-}
 
 /* ===== JUMP TO BUTTON ===== */
 /* ===== JUMP TO CURRENT WEEK (SMART VERSION) ===== */
@@ -533,6 +531,9 @@ if (jumpBtn) {
   });
 }
  ===== JUMP TO BUTTON ===== */
+  
+}
+
 
 /* ===== NIGHT MODE AUTO + MANUAL ===== */
 
