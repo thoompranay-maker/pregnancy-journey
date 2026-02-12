@@ -480,16 +480,59 @@ trimesterTabs[defaultTrimester - 1].classList.add("active");
 }
 
 /* ===== JUMP TO BUTTON ===== */
+/* ===== JUMP TO CURRENT WEEK (SMART VERSION) ===== */
+
 const jumpBtn = document.getElementById("jumpToCurrent");
+
 if (jumpBtn) {
   jumpBtn.addEventListener("click", () => {
+
     const currentWeek = document.querySelector(".timeline-week.current");
-    if (currentWeek) {
-      currentWeek.scrollIntoView({ behavior: "smooth", block: "center" });
-    }
+    if (!currentWeek) return;
+
+    const weekNumber = parseInt(currentWeek.dataset.week);
+
+    // Detect correct trimester
+    let correctTrimester = 1;
+    if (weekNumber >= 14 && weekNumber <= 27) correctTrimester = 2;
+    if (weekNumber >= 28) correctTrimester = 3;
+
+    // Activate correct trimester tab
+    const trimesterTabs = document.querySelectorAll(".trimester-tab");
+    trimesterTabs.forEach(tab => {
+      tab.classList.remove("active");
+
+      if (parseInt(tab.dataset.trimester) === correctTrimester) {
+        tab.classList.add("active");
+      }
+    });
+
+    // Show correct trimester weeks
+    const allWeeks = document.querySelectorAll(".timeline-week");
+    allWeeks.forEach(week => {
+      const num = parseInt(week.dataset.week);
+
+      if (
+        (correctTrimester === 1 && num <= 13) ||
+        (correctTrimester === 2 && num >= 14 && num <= 27) ||
+        (correctTrimester === 3 && num >= 28)
+      ) {
+        week.style.display = "block";
+      } else {
+        week.style.display = "none";
+      }
+    });
+
+    // Now scroll
+    setTimeout(() => {
+      currentWeek.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+      });
+    }, 100);
   });
 }
-/* ===== JUMP TO BUTTON ===== */
+ ===== JUMP TO BUTTON ===== */
 
 /* ===== NIGHT MODE AUTO + MANUAL ===== */
 
