@@ -530,7 +530,7 @@ if (jumpBtn) {
     }, 100);
   });
 }
- ===== JUMP TO BUTTON ===== */
+/* ===== JUMP TO BUTTON ===== */
   
 }
 
