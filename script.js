@@ -430,7 +430,7 @@ if (progressFill && progressPercent) {
     });
   });
 
-});
+}
 
 /* ===== JUMP TO BUTTON ===== */
 const jumpBtn = document.getElementById("jumpToCurrent");
