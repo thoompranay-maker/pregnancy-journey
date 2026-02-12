@@ -53,7 +53,7 @@ function getTrimesterByWeek(week) {
 
 /* ================== MAIN ================== */
 
-window.addEventListener("load", () => {
+window.addEventListener("load", initPage);
 
   /* ===== CONFIG ===== */
   const LMP_DATE = new Date(2025, 10, 12); // 12 Nov 2025
