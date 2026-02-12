@@ -430,6 +430,53 @@ if (progressFill && progressPercent) {
     });
   });
 
+/* ===== TRIMESTER TAB LOGIC ===== */
+
+const trimesterTabs = document.querySelectorAll(".trimester-tab");
+const allWeeks = document.querySelectorAll(".timeline-week");
+
+function showTrimester(trimester) {
+  allWeeks.forEach(week => {
+    const weekNumber = parseInt(week.dataset.week);
+
+    if (
+      (trimester === 1 && weekNumber <= 13) ||
+      (trimester === 2 && weekNumber >= 14 && weekNumber <= 27) ||
+      (trimester === 3 && weekNumber >= 28)
+    ) {
+      week.style.display = "block";
+    } else {
+      week.style.display = "none";
+    }
+  });
+}
+
+trimesterTabs.forEach(tab => {
+  tab.addEventListener("click", () => {
+
+    // Remove active class
+    trimesterTabs.forEach(t => t.classList.remove("active"));
+
+    // Add active class
+    tab.classList.add("active");
+
+    const trimester = parseInt(tab.dataset.trimester);
+    showTrimester(trimester);
+  });
+});
+
+// Default → show current trimester
+let defaultTrimester = 1;
+if (weeks >= 14 && weeks <= 27) defaultTrimester = 2;
+if (weeks >= 28) defaultTrimester = 3;
+
+showTrimester(defaultTrimester);
+
+trimesterTabs[defaultTrimester - 1].classList.add("active");
+
+
+/* ===== TRIMESTER TAB LOGIC END ===== */
+  
 }
 
 /* ===== JUMP TO BUTTON ===== */
