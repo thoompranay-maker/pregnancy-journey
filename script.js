@@ -46,8 +46,8 @@ function typeText(el, text, speed = 35) {
 }
 
 function getTrimesterByWeek(week) {
-  if (week <= 12) return 1;
-  if (week <= 27) return 2;
+  if (week <= 13) return 1;
+  if (week <= 26) return 2;
   return 3;
 }
 
@@ -76,8 +76,8 @@ function initPage() {
 
   /* ===== TRIMESTER ===== */
   let trimester = "1st Trimester";
-  if (weeks >= 13 && weeks < 28) trimester = "2nd Trimester";
-  if (weeks >= 28) trimester = "3rd Trimester";
+  if (weeks >= 14 && weeks <= 26) trimester = "2nd Trimester";
+  if (weeks >= 27) trimester = "3rd Trimester";
 
   /* ===== ELEMENTS ===== */
   const trimesterEl = document.getElementById("trimester");
@@ -441,8 +441,8 @@ function showTrimester(trimester) {
 
     if (
       (trimester === 1 && weekNumber <= 13) ||
-      (trimester === 2 && weekNumber >= 14 && weekNumber <= 27) ||
-      (trimester === 3 && weekNumber >= 28)
+      (trimester === 2 && weekNumber >= 14 && weekNumber <= 26) ||
+      (trimester === 3 && weekNumber >= 27)
     ) {
       week.style.display = "block";
     } else {
@@ -467,8 +467,8 @@ trimesterTabs.forEach(tab => {
 
 // Default → show current trimester
 let defaultTrimester = 1;
-if (weeks >= 14 && weeks <= 27) defaultTrimester = 2;
-if (weeks >= 28) defaultTrimester = 3;
+if (weeks >= 14 && weeks <= 26) defaultTrimester = 2;
+if (weeks >= 27) defaultTrimester = 3;
 
 showTrimester(defaultTrimester);
 
@@ -492,8 +492,8 @@ if (jumpBtn) {
 
     // Detect correct trimester
     let correctTrimester = 1;
-    if (weekNumber >= 14 && weekNumber <= 27) correctTrimester = 2;
-    if (weekNumber >= 28) correctTrimester = 3;
+    if (weekNumber >= 14 && weekNumber <= 26) correctTrimester = 2;
+    if (weekNumber >= 27) correctTrimester = 3;
 
     // Activate correct trimester tab
     const trimesterTabs = document.querySelectorAll(".trimester-tab");
@@ -512,8 +512,8 @@ if (jumpBtn) {
 
       if (
         (correctTrimester === 1 && num <= 13) ||
-        (correctTrimester === 2 && num >= 14 && num <= 27) ||
-        (correctTrimester === 3 && num >= 28)
+        (correctTrimester === 2 && num >= 14 && num <= 26) ||
+        (correctTrimester === 3 && num >= 27)
       ) {
         week.style.display = "block";
       } else {
